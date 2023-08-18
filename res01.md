@@ -27,3 +27,9 @@ sudo kill 1548
 sudo rm /var/lib/apt/lists/lock
 ```
 
+4、解决permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json?all=1": dial unix /var/run/docker.sock: connect: permission denied
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chown 777 /var/run/docker.sock
+sudo service docker restart
