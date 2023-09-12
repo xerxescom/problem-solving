@@ -34,4 +34,12 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo chown 777 /var/run/docker.sock
 sudo service docker restart
+
+或者（在设置root密码的基础上）
+su root
+sudo groupadd docker               #添加用户组
+sudo gpasswd -a username docker    #将当前用户添加至用户组
+newgrp docker                      #更新用户组
+
+
 ```
